@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Iso&family=Saira+Condensed:wght@300&display=swap');
+
+header {
+  background-color: rgb(255, 149, 0);
+  padding: 10px 60px;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0px 2px 7px rgb(119, 119, 119);
+}
+
+img {
+  width: 40px;
+  transition: 0.5s;
+}
+
+button {
+  border: none;
+  background-color: transparent;
+}
+
+header > h1 {
+  font-family: 'Saira Condensed', sans-serif, Georgia, 'Times New Roman', Times, serif;
+  margin: 0;
+}
+
+.links {
+  display: flex;
+  gap: 60px;
+  align-items: center;
+  font-size: 1.2rem;
+}
+
+a {
+  text-decoration: none;
+  font-family: sans-serif;
+  color: black;
+  transition: 0.5s;
+}
+
+a:hover {
+  scale: 1.1;
+}
+
+img:hover {
+  scale: 1.1;
+  cursor: pointer;
+}
