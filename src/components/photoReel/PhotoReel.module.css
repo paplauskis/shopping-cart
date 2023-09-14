@@ -1,0 +1,14 @@
+.container {
+  display: flex;
+}
+
+.previous > img,
+.next > img {
+  width: 40px;
+}
+
+.previous,
+.next {
+  border: none;
+  background-color: transparent;
+}
