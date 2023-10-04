@@ -1,0 +1,22 @@
+.product > img {
+  width: 200px;
+  height: 200px;
+}
+
+.productsList {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  grid-auto-flow: row;
+  gap: 40px;
+  max-width: 90vw;
+  margin: 50px auto;
+}
+
+.product {
+  border: 2px solid lime;
+  background-color: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
