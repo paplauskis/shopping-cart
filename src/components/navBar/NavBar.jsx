@@ -1,13 +1,18 @@
 import navBar from './NavBar.module.css'
-import cartImage from '../../assets/cart.png';
+import cartImage from '../../assets/cart.png'
+import { Link } from 'react-router-dom'
 
 function NavBar() {
   return (
     <header>
-      <h1>RNDMshop</h1>
+      <h1>
+        <Link to='/'>RNDMshop</Link>
+      </h1>
       <div className={navBar.links}>
-        <a href="/">Shop</a>
-        <a href='/'><img src={cartImage} alt="shopping cart icon" /> </a>
+        <Link to='products'>Shop</Link>
+        <Link to='cart'>
+          <img src={cartImage} alt='shopping cart icon' />
+        </Link>
       </div>
     </header>
   )
