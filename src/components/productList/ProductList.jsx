@@ -21,8 +21,9 @@ function ProductList() {
             <img src={item.image} alt='product' />
             <p className={style.price}>$ {item.price}</p>
             <p className={style.title}>{item.title}</p>
-            <p className={style.rating}>Rating: {item.rating.rate}/5</p>
-            <p className={style.count}>Reviews: {item.rating.count}</p>
+            <p className={style.rating}>Rating: <span>{item.rating.rate}/5</span></p>
+            <p className={style.count}>Reviews: <span>{item.rating.count}</span></p>
+            <button className={style.addToCart}>Add to cart <input type="number" name="item_amount" id="item-amount" /></button>
           </div>
         )
       })}
