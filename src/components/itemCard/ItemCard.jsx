@@ -1,7 +1,13 @@
 import card from './ItemCard.module.css'
 import AddToCart from '../addToCart/AddToCart'
+import { useEffect, useState } from 'react'
 
-function ItemCard({ item, index }) {
+function ItemCard({ item, index, addItems }) {
+
+  const addItemsToCart = (item) => {
+    addItems(item)
+  }
+
   return (
     <div className={card.product} key={index}>
       <img src={item.image} alt='product' />
@@ -13,7 +19,7 @@ function ItemCard({ item, index }) {
       <p className={card.count}>
         Reviews: <span>{item.rating.count}</span>
       </p>
-      <AddToCart  index={index}/>
+      <AddToCart image={item.image} price={item.price} title={item.title} onAddClick={addItemsToCart} />
     </div>
   )
 }
