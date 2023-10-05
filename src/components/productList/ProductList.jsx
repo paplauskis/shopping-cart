@@ -5,7 +5,16 @@ import ItemCard from '../itemCard/ItemCard'
 function ProductList() {
   const [items, setItems] = useState([])
   const [loading, setLoading] = useState(true)
+  const [cartItems, setCartItems] = useState([])
 
+  const addItemsToCart = (item) => {
+    setCartItems((arr) => [...arr, item])
+  }
+
+   useEffect(() => {
+    console.log(cartItems) // just for checking array
+  }, [cartItems])
+  
   useEffect(() => {
     fetch('https://fakestoreapi.com/products', { mode: 'cors' })
       .then(res => res.json())
