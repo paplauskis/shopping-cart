@@ -11,6 +11,7 @@ header {
 header img {
   width: 40px;
   transition: 0.5s;
+  padding: 5px 5px 0px 0px;
 }
 
 .links button {
@@ -44,4 +45,20 @@ a:hover {
 header img:hover {
   scale: 1.1;
   cursor: pointer;
+}
+
+.cart {
+  position: relative;
+}
+
+.cart > .count {
+  background-color: royalblue;
+  width: 20px;
+  height: 20px;
+  font-size: 0.9rem;
+  text-align: center;
+  position: absolute;
+  top: 0%;
+  right: 0%;
+  border-radius: 50%;
 }
