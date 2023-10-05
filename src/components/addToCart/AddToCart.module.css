@@ -1,0 +1,38 @@
+.amountButtons {
+  display: flex;
+  justify-content: center;
+}
+
+.plus,
+.minus,
+.amount {
+  width: 34px;
+  border: 2px solid royalblue;
+  border-top: none;
+  background-color: transparent;
+  text-align: center;
+  transition: 0.5s;
+}
+
+.addToCart {
+  width: 106px;
+  background-color: transparent;
+  border: 2px solid royalblue;
+  transition: 0.5s;
+  margin-top: 10px;
+}
+
+.plus {
+  border-right: none;
+}
+
+.minus {
+  border-left: none;
+}
+
+.plus:hover,
+.minus:hover,
+.amount:hover,
+.addToCart:hover {
+  background-color: rgb(255, 149, 0);
+}
