@@ -1,20 +1,19 @@
 import card from './ItemCard.module.css'
+import AddToCart from '../addToCart/AddToCart'
 
-function ItemCard(props) {
+function ItemCard({ item, index }) {
   return (
-    <div className={card.product} key={props.index}>
-      <img src={props.item.image} alt='product' />
-      <p className={card.price}>$ {props.item.price}</p>
-      <p className={card.title}>{props.item.title}</p>
+    <div className={card.product} key={index}>
+      <img src={item.image} alt='product' />
+      <p className={card.price}>$ {item.price}</p>
+      <p className={card.title}>{item.title}</p>
       <p className={card.rating}>
-        Rating: <span>{props.item.rating.rate}/5</span>
+        Rating: <span>{item.rating.rate}/5</span>
       </p>
       <p className={card.count}>
-        Reviews: <span>{props.item.rating.count}</span>
+        Reviews: <span>{item.rating.count}</span>
       </p>
-      <button className={card.addToCart}>
-        Add to cart <input type='number' name='item_amount' id={props.index} />
-      </button>
+      <AddToCart  index={index}/>
     </div>
   )
 }
