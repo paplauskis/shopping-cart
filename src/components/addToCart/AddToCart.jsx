@@ -1,7 +1,9 @@
 import cart from './AddToCart.module.css'
 import { useState } from 'react'
 
-function AddToCart({ image, price, title, onAddClick }) {
+export const cartItemsArr = []
+
+function AddToCart({ image, price, title }) {
   const [amount, setAmount] = useState(1)
   const [amountButtons, showAmountButtons] = useState(false)
   const [cartButtonText, changeCartButtontext] = useState('Add to cart')
@@ -21,7 +23,7 @@ function AddToCart({ image, price, title, onAddClick }) {
   const addItems = () => {
     if (cartButtonText === 'Confirm') {
       const newItem = { price, title, amount, image }
-      onAddClick(newItem)
+      cartItemsArr.push(newItem)
     }
     toggleAmountButtons()
   }
