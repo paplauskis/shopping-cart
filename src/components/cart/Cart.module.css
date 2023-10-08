@@ -39,3 +39,12 @@
 .amount span {
   color: royalblue;
 }
+
+.checkout {
+  border: 2px solid royalblue;
+  width: 300px;
+  height: 60px;
+  font-size: 1.1rem;
+  background-color: rgb(255, 149, 0);
+  border-radius: 15px;
+}
