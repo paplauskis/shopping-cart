@@ -6,9 +6,20 @@ function Cart({ cartItems }) {
   const [totalPrice, setTotalPrice] = useState(0)
 
   // sorts objects by title
-  cartItemsArr.sort((a, b) =>
-    a.title > b.title ? 1 : b.title > a.title ? -1 : 0
-  )
+  const sortArray = () => {
+    cartItemsArr.sort((a, b) =>
+      a.title > b.title ? 1 : b.title > a.title ? -1 : 0
+    )
+  }
+  sortArray()
+  // checks for same items in cart and concats them
+  for (let i = 0; i < cartItemsArr.length; i++) {
+    if (i === 0) continue
+    if (cartItemsArr[i].title === cartItemsArr[i - 1].title) {
+      cartItemsArr[i].amount += cartItemsArr[i - 1].amount
+      cartItemsArr.splice(i - 1, 1)
+    }
+  }
 
   useEffect(() => {
     let total = 0
