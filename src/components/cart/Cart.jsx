@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import cart from './Cart.module.css'
 import { cartItemsArr } from '../addToCart/AddToCart'
-import { sortArray } from '../../pages/ProductsPage'
+import { sortArray } from '../productList/ProductList'
 
 function Cart({ cartItems }) {
   const [totalPrice, setTotalPrice] = useState(0)
