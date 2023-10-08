@@ -1,18 +1,14 @@
 import { useEffect, useState } from 'react'
 import cart from './Cart.module.css'
 import { cartItemsArr } from '../addToCart/AddToCart'
+import { sortArray } from '../../pages/ProductsPage'
 
 function Cart({ cartItems }) {
   const [totalPrice, setTotalPrice] = useState(0)
 
   // sorts objects by value, in the given arrangement
-  const sortArray = (value, arrangement) => {
-    const symbol = arrangement === 'ascending' ? 1 : -1;
-    cartItemsArr.sort((a, b) => {
-      return a[value] > b[value] ? symbol : b[value] > a[value] ? -symbol : 0;
-    });
-  };
-  sortArray('price', 'descending')
+  sortArray('title', 'ascending')
+
   // checks for same items in cart and concats them
   for (let i = 0; i < cartItemsArr.length; i++) {
     if (i === 0) continue
