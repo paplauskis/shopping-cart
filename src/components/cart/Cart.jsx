@@ -5,13 +5,14 @@ import { cartItemsArr } from '../addToCart/AddToCart'
 function Cart({ cartItems }) {
   const [totalPrice, setTotalPrice] = useState(0)
 
-  // sorts objects by title
-  const sortArray = () => {
-    cartItemsArr.sort((a, b) =>
-      a.title > b.title ? 1 : b.title > a.title ? -1 : 0
-    )
-  }
-  sortArray()
+  // sorts objects by value, in the given arrangement
+  const sortArray = (value, arrangement) => {
+    const symbol = arrangement === 'ascending' ? 1 : -1;
+    cartItemsArr.sort((a, b) => {
+      return a[value] > b[value] ? symbol : b[value] > a[value] ? -symbol : 0;
+    });
+  };
+  sortArray('price', 'descending')
   // checks for same items in cart and concats them
   for (let i = 0; i < cartItemsArr.length; i++) {
     if (i === 0) continue
@@ -26,7 +27,8 @@ function Cart({ cartItems }) {
     cartItems.forEach(item => {
       total += item.price * item.amount
     })
-    setTotalPrice(total)
+    // slice is used to cut unrealistic numbers
+    setTotalPrice(total.toString().slice(0, 6))
   }, [])
 
   return (
