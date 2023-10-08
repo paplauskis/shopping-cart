@@ -3,13 +3,6 @@ import NavBar from '../components/navBar/NavBar'
 import { cartItemsArr } from '../components/addToCart/AddToCart'
 import { useEffect, useState } from 'react'
 
-export const sortArray = (value, arrangement) => {
-  const symbol = arrangement === 'ascending' ? 1 : -1;
-  cartItemsArr.sort((a, b) => {
-    return a[value] > b[value] ? symbol : b[value] > a[value] ? -symbol : 0;
-  });
-};
-
 function ProductsPage() {
   const [cartCount, setCartCount] = useState(cartItemsArr.length)
 
