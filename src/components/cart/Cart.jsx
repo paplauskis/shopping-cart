@@ -1,8 +1,14 @@
 import { useEffect, useState } from 'react'
 import cart from './Cart.module.css'
+import { cartItemsArr } from '../addToCart/AddToCart'
 
 function Cart({ cartItems }) {
   const [totalPrice, setTotalPrice] = useState(0)
+
+  // sorts objects by title
+  cartItemsArr.sort((a, b) =>
+    a.title > b.title ? 1 : b.title > a.title ? -1 : 0
+  )
 
   useEffect(() => {
     let total = 0
@@ -11,7 +17,6 @@ function Cart({ cartItems }) {
     })
     setTotalPrice(total)
   }, [])
-    
 
   return (
     <div className={cart.container}>
@@ -25,13 +30,16 @@ function Cart({ cartItems }) {
               <div className={cart.itemInfo}>
                 <p className={cart.title}>{item.title}</p>
                 <p className={cart.price}>$ {item.price}</p>
-                <p className={cart.amount}>Quantity: <span>{item.amount}</span></p>
+                <p className={cart.amount}>
+                  Quantity: <span>{item.amount}</span>
+                </p>
               </div>
             </div>
           )
         })}
-        <p className={cart.total}>Total: $ {totalPrice}</p>
       </div>
+      <p className={cart.total}>Total: $ {totalPrice}</p>
+      <button className={cart.checkout}>Proceed to Checkout</button>
     </div>
   )
 }
