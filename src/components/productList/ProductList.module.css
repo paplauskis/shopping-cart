@@ -7,3 +7,15 @@
   margin: 50px auto;
   font-family: sans-serif, Georgia, 'Times New Roman', Times, serif;
 }
+
+.sort {
+  width: 300px;
+  margin: 40px 100px;
+}
+
+select {
+  padding: 5px 10px;
+  border: 2px solid royalblue;
+  background-color: transparent;
+  border-radius: 10px;
+}
