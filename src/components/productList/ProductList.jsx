@@ -4,9 +4,10 @@ import ItemCard from '../itemCard/ItemCard'
 
 export const sortArray = (value, arrangement, arr) => {
   const symbol = arrangement === 'ascending' ? 1 : -1
-  arr.sort((a, b) => {
+  const newArr = arr.sort((a, b) => {
     return a[value] > b[value] ? symbol : b[value] > a[value] ? -symbol : 0
   })
+  return newArr
 }
 
 function ProductList() {
@@ -16,19 +17,24 @@ function ProductList() {
   const [arrangement, setArrangement] = useState('ascending')
 
   useEffect(() => {
-    sortArray(sortValue, arrangement, items)
+    const sortedArr = sortArray(sortValue, arrangement, items)
+    setItems(sortedArr)
+    console.log(sortedArr)
   }, [sortValue, arrangement])
 
   useEffect(() => {
     fetch('https://fakestoreapi.com/products', { mode: 'cors' })
       .then(res => res.json())
-      .then(json => setItems(json))
+      .then(json => {
+        sortArray('title', 'ascending', json)
+        setItems(json)
+      })
       .catch(error => console.log(error))
       .finally(() => setLoading(false))
   }, [])
 
   const handleSortChange = e => {
-    const [sortDirection, value] = e.target.value.split('.')
+    const [value, sortDirection] = e.target.value.split('.')
     setSortValue(value)
     setArrangement(sortDirection)
   }
