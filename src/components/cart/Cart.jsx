@@ -1,13 +1,14 @@
 import { useEffect, useState } from 'react'
 import cart from './Cart.module.css'
 import { cartItemsArr } from '../addToCart/AddToCart'
-import { sortArray } from '../productList/ProductList'
 
 function Cart({ cartItems }) {
   const [totalPrice, setTotalPrice] = useState(0)
 
-  // sorts objects by value, in the given arrangement
-  sortArray('title', 'ascending')
+  // sorts items by title, A-Z
+  cartItems.sort((a, b) => {
+    return a.title > b.title ? 1 : b.title > a.title ? -1 : 0
+  })
 
   // checks for same items in cart and concats them
   for (let i = 0; i < cartItemsArr.length; i++) {
