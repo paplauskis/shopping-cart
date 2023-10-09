@@ -2,7 +2,6 @@ import scrollingBar from './Scrolling-bar.module.css'
 import { useEffect } from 'react'
 
 function ScrollBar() {
-  
   return (
     <div className={scrollingBar.scrollBar} data-animated={true}>
       <ul className={scrollingBar.innerScroller}>

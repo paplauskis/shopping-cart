@@ -28,8 +28,14 @@ function PhotoReel() {
       </button>
       {allImgs.map((img, index) => {
         return (
-          <div className={index === currentImg ? photoReel.visible : photoReel.hidden} key={index}>
-            {index === currentImg && <img src={allImgs[currentImg]} alt='image' />}
+          <div
+            className={
+              index === currentImg ? photoReel.visible : photoReel.hidden
+            }
+            key={index}>
+            {index === currentImg && (
+              <img src={allImgs[currentImg]} alt='image' />
+            )}
           </div>
         )
       })}

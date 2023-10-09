@@ -2,7 +2,6 @@ import card from './ItemCard.module.css'
 import AddToCart from '../addToCart/AddToCart'
 
 function ItemCard({ item, index }) {
-
   return (
     <div className={card.product} key={index}>
       <img src={item.image} alt='product' />

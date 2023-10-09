@@ -8,9 +8,9 @@ function ProductsPage() {
 
   useEffect(() => {
     //interval checks every 100ms if there's a new item
-     const interval = setInterval(() => {
+    const interval = setInterval(() => {
       setCartCount(cartItemsArr.length)
-    }, 100);
+    }, 100)
 
     // const secondInterval = setInterval(() => {
     //   console.log(cartItemsArr)
@@ -20,11 +20,11 @@ function ProductsPage() {
       clearInterval(interval)
       // clearInterval(secondInterval)
     }
-  }, []);
+  }, [])
 
   return (
     <>
-      <NavBar cartItemCount={cartCount}/>
+      <NavBar cartItemCount={cartCount} />
       <ProductList />
     </>
   )

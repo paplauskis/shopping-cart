@@ -5,13 +5,12 @@ import ScrollBar from './components/scrolling-bar/Scrolling-bar'
 import './App.css'
 
 function App() {
-
   return (
     <>
-    <NavBar />
-    <ScrollBar />
-    <Description />
-    <PhotoReel />
+      <NavBar />
+      <ScrollBar />
+      <Description />
+      <PhotoReel />
     </>
   )
 }

@@ -8,12 +8,12 @@ function CartPage() {
 
   useEffect(() => {
     setCartCount(cartItemsArr.length)
-  } , [])
+  }, [])
 
   return (
     <>
-      <NavBar cartItemCount={cartCount}/>
-      <Cart cartItems={cartItemsArr}/>
+      <NavBar cartItemCount={cartCount} />
+      <Cart cartItems={cartItemsArr} />
     </>
   )
 }
